@@ -5837,6 +5837,55 @@ QBShared = QBShared or {}
 			["combinable"] = nil,
 			["description"] = ""
 		},
+	--R14 Evidence
+		['nikon'] = {
+			['name'] = 'nikon',
+			['label'] = 'Nikoff G900',
+			['weight'] = 1000,
+			['type'] = 'item',
+			['image'] = 'nikon.png',
+			['unique'] = false,
+			['useable'] = true,
+			['shouldClose'] = true,
+			['combinable'] = nil,
+			['description'] = 'Caught in 4K'
+		},
+		["gsrtestkit"] = {
+			["name"] = "gsrtestkit",
+			["label"] = "GSR Field Test Kit",
+			["weight"] = 200,
+			["type"] = "item",
+			["image"] = "gsrtestkit.png",
+			["unique"] = false,
+			["useable"] = true,
+			["shouldClose"] = true,
+			["combinable"] = nil,
+			["description"] = 'A field GSR test kit containing several test strips'
+		},
+		["dnatestkit"] = {
+			["name"] = "dnatestkit",
+			["label"] = "DNA Field Swab Kit",
+			["weight"] = 200,
+			["type"] = "item",
+			["image"] = "dnatestkit.png",
+			["unique"] = false,
+			["useable"] = true,
+			["shouldClose"] = true,
+			["combinable"] = nil,
+			["description"] = 'A field DNA swab kit containing several vials and swabs'
+		},
+		["breathalyzer"] = {
+			["name"] = "breathalyzer",
+			["label"] = "Breathalyzer",
+			["weight"] = 200,
+			["type"] = "item",
+			["image"] = "breathalyzer.png",
+			["unique"] = false,
+			["useable"] = true,
+			["shouldClose"] = true,
+			["combinable"] = nil,
+			["description"] = 'A vintage 2000\'s WiWang breathalyzer engraved Property of SAPD'
+		},
 
 
 
