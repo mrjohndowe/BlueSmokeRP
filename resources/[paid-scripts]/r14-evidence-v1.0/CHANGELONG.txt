@@ -1,0 +1,89 @@
+r14-evidence early access changelong
+
+v1.06
+    - blood event moved to r14-evidence script, no edit is required to qb-ambulance job now
+    - blood will now be dropped when player ped takes damage based on a configurable chance
+    - serial number will no longer be 'guessed' when using weapons in inventory, event now sets the current serial number 
+      when drawing a weapon from inventory and sends it to server side
+    - refinement to fix for evidence pickups breaking when spamming pickup key, should be fully fixed now
+
+v1.05
+    - modified current evidence pickup thread to no longer break after leaving the area, current evidence is now stored in a dedicated
+      variable and no longer referenced from the area evidence cache
+    - fixed possible error breaking evidence pickup when evidence pickup is spammed
+    - config option added for making evidence bags usable
+
+v1.04 hotfix
+    - modified thread that applies gsr status to rate limit attempts to set gsr, crashing using continious fire weapons should be resolved
+
+v1.03 hotfix
+    - fixed bug with evidence being drawn permanently after using flashlight, variable is now correctly set to false while not using flashlight
+
+v1.02 hotfix
+    - fixed broken fade evidence function, it will now access the correct tables and delete the evidence accordingly
+    - netimpacts will now properly fade over time, restored missing time variable to netimpacts
+
+v1.01 hotfix
+    - readded workaround qb-target submenu for police actions
+
+v1.0 - Release
+    - fixed evidence fade accessing the wrong tables for the evidence type being removed
+    - fixed evidence bags not copying to clipboard properly due to string format argument mismatch
+    - modified BAC events to not require ABV
+    - modified BAC events to accept a target argument
+    - added blips back for car washes
+
+-------------------------------------------------------------------------------------------------------------------------
+
+r14-evidence beta test changelong
+
+v1.0 - Release
+    - overhaul of qb-policejob/client/evidence.lua and qb-policejob/server/main.lua events
+    - display of markers for all evidence in area when using flashlight
+    - display of markers and evidence info in area when using camera
+    - addition of vehicle casings, fingerprints, and blood that can be discovered by police
+    - nikon camera for crime scene documentation and surveillence, also civilian photos
+    - adds vehicle evidence
+    - /r14debug command to allow changing of debug variables in runtime
+
+v1.01 hotfix
+    - removed preexisting webhooks from config
+    - removed unnecessary information from config
+
+v1.02 hotfix
+    - fixed incorrect label causing evidence pickups to break (streetLabel was left in, changed to street)
+
+v1.1 update
+    - vehicle evidence will now be removed after a set number of days, adjustable in the config by evidence type    
+    - fingerprint evidence will now fade over time
+    - added Breathalyzer, BAC system integrated with QB-Core, and qb-target option to breathalyze a person
+    - added qb-target options for GSR testing, DNA testing, and Investigate Person with new progress bars
+    - added GSR test kit and DNA test kit items which are consumed based on adjustable config options
+    - separated GSR into 'GSR status' detected by GSR test kit and 'gunpowder' status effect revealed by investigate person
+    - added positive gsr evidence item, when a positive test comes back, an evidence bag will be generated if the officer has one
+    - modified player statuses, gsr status, and blood alcohol content to be recorded based on CID and not source, meaning they will no longer transfer between characters when not fully disconnecting from the server
+    - added check to apply gunpowder status effect when a weapon is fired near the player (not as accurate as GSR status, can be applied based on any weapon that is thrown like snowballs)
+    - modified gsrs status to check for weapon damage type, a bit more resource intensive but more accurate and does not require updating the script for addon weapons
+    - added frisk qb-target option that allows officers to check a person for weapons without searching them
+
+v1.11 hotfix
+    - fix for vehicle casings not loading properly, expiration for car casings is now calculated properly
+    - added multiple debug variables for printing qb-target events
+    - changed notification text if officer does not have a evidence bag when conducting a gsr test
+
+v1.2 update
+    - impacts will now attach to networked entities that have not been destroyed or killed, this includes vehicles and peds (both locals and players)
+    - networked entity impacts will retain bullet angle of impact evidence, ped impacts will display a list of impact types on the damaged ped bone
+    - evidence bags are now usable, when used they will copy the tracking ID and relevant info to your clipboard
+    - added check if ped is downed or dead to qb-target options, should no longer be displayed when in last stand or dead
+    - added notifications for the target of frisks, gsr tests, breathalyzers, and dna swabs allowing them time to run away (did not add for investigate)
+    - added config options for database events for those not using qb-target
+    - added evidence fading over time for impacts and network impacts
+    - moved multiple tables to config
+
+v1.21 hotfix
+    - fixed evidence loading for networked impacts
+    - cleaned up evidence loading function
+    - added networked impacts for flashlight
+    - cleaned up code
+    - removed marker being drawn for networked ped impacts

@@ -1,0 +1,34 @@
+Out of the box, qb-core does not have an functions that allow automatic generation of 
+fingerprint evidence based on the vehicle. If you wish to modify your vehicle keys/theft
+resource to work with r14-evidence, please do so at your own risk! BACKUP EVERYTHING you 
+intend to change so that you can revert to a working copy. Do not make changes to your 
+resources if you do are not familiar with lua or scripting languages, I will not offer free
+support to fix resources broken attempting to modify them.
+
+If you choose to proceed, you can generate vehicle fingerprints by using the following events:
+
+-------------------------------------------------------------------
+
+To create a car fingerprint, you must trigger this server event with two arguments:
+
+TriggerServerEvent('evidence:server:CreateCarFingerprint', plate, location)
+
+The first is the vehicle plate, please make sure that you are using QBCore.Functions.GetPlate()
+in order to send this information to the event and NOT a native. This function formats the plate 
+text, and if you simply use a native, you will get an unformatted plate that does match what is
+in your database. 
+
+The second is the location of the fingerprint. This is displayed in the vehicle evidence menu. It
+should be a string describing where the fingerprint is found by the officer.
+
+------------------------- example code ------------------------
+
+local ped = PlayerPedId()
+local pos = GetEntityCoords(ped)
+local vehicle = QBCore.Functions.GetClosestVehicle(pos)
+
+TriggerServerEvent('evidence:server:CreateCarFingerprint', QBCore.Functions.GetPlate(vehicle), "Driver Door")
+
+In this function, we get the closest vehicle to the player ped, and supply it's coords to the included
+GetClosestVehicle function to get a vehicle entity handle. That handle is then supplied to GetPlate() and
+we specify that it is on the driver side door.

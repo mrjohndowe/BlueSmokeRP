@@ -1,0 +1,153 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="reset.css" type="text/css">
+        <link rel="stylesheet" href="index.css" type="text/css">
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+	</head>
+	<body>
+
+		<div id="container">
+			<div id="startscreen">
+				<img class="logo" alt="lspd" src="https://static.wikia.nocookie.net/gta/images/5/5e/Sceau-lspd-gtav.png/revision/latest?cb=20140916194909&path-prefix=fr">
+				<h1 style="margin-left: 160px; margin-top: 50px; font-size: 45px; font-family: 'Secular One', sans-serif;
+			    	margin: 0;
+    				position: absolute;
+    				top: 50%;
+    				left: 50%;
+    				-ms-transform: translate(-50%, -50%);
+					transform: translate(-50%, -50%);">SAPD Form </h1>
+				<button class="button" id="start">Start</button>
+			</div>
+
+
+			<!-- Form -->
+
+
+
+			<div id="info">
+				
+				<label class="label">In Game First Name</label>
+				<input id="firstname" type="text" placeholder="Type Here" class="input"  required="true" name="need" ><br>
+				<label class="label1">In Game Last Name</label>
+				<input id="lastname" type="text" placeholder="Type Here" class="input"  required="true" name="need" ><br>
+				<label class="label2">Age</label>
+				<input id="age" type="number" placeholder="Type Here" class="input"  required="true" name="need" ><br>
+				<label class="label3">Why Do You Want To Be On The LSPD?</label>
+				<input id="why"type="text" type="textarea" placeholder="Type Here" class="why"  required="true"  name="need"><br>
+				<label class="label4">Gender:</label>
+
+				<select  class="gender" id="gender" required="true">
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+				</select>
+
+				<label class="label5">In Game Phone number</label>
+				<input id="Phonenumber" type="text" placeholder="Type Here" class="input"  required="true" name="need" ><br>
+
+				<label class="label6">Discord Name </label>
+				<input id="DiscordName" type="text" placeholder="Type Here" class="input"  required="true" name="need" ><br>
+
+				<label class="label7">What Can You Bring To The LSPD?</label>
+				<input id="why2"type="text" type="textarea" placeholder="Type Here" class="why2"  required="true"  name="need"><br>
+
+				<label class="label8">Why Should We Choose You </label>
+				<input id="WhyShouldWeChooseYou" type="text" placeholder="Type Here" class="input"  required="true" name="need" ><br>
+
+				<div id="nextscreen">
+					<div id="nextscreen">
+						<button class="Next" id="next">Next</button>
+					</div>
+				
+				</div>
+				
+				<strong class="warn"  id="warn">Please Fill All The Values!</strong>
+				
+				
+			</div>
+
+			<div id="info2">
+
+				<label class="label9">How Long Have You being Playing On ORP For?</label>
+				<input id="Howlong" type="text" placeholder="Type Here" class="input"  required="true" name="need" ><br>
+
+				<label class="label10">Have You Ever Being A Police In a Whitlisted Server</label>
+
+				<select  class="whitlist" id="whitlist" required="true">
+					<option value="Yes">Yes</option>
+					<option value="No">No</option>
+				</select>
+
+				<label class="label11">Have you had any previous experiences as police and where?</label>
+				<input id="experiences"type="text" type="textarea" placeholder="Type Here" class="experiences"  required="true"  name="need"><br>
+
+				<label class="label12">You are alone in your squad car, you hear multiple shots fired in your general area, what do you do and why?</label>
+				<input id="pd1"type="text" type="textarea" placeholder="Type Here" class="pd1"  required="true"  name="need"><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<div id="Backscreen">
+					<div id="Backscreen">
+						<button class="Back" id="back">Back</button>
+					</div>
+				</div>
+
+				<div id="nextscreen">
+					<div id="nextscreen">
+						<button class="dick" id="dick">Next</button>
+					</div>
+				
+				</div>
+
+			</div>
+
+
+
+			<div id="info3">
+
+
+
+
+				<label class="label13">You arrive at the scene of a store robbery and the suspect, who has a gun, has taken a hostage, what do you do and why?</label>
+				<input id="pd2"type="text" type="textarea" placeholder="Type Here" class="pd2"  required="true"  name="need"><br>
+
+
+				<label class="label14">What separates you from others applying?</label>
+				<input id="pd3"type="text" type="textarea" placeholder="Type Here" class="pd3"  required="true"  name="need"><br>
+
+
+				
+				<button class="sumbit" id="sumbit">Sumbit</button>
+
+				<div id="nickscreen">
+					<div id="nickscreen">
+						<button class="nick" id="nick">Back</button>
+					</div>
+				</div>
+
+			</div>
+			<!-- Done -->
+
+			<div id="done">
+				<strong class="thanks">Thanks</strong>
+				<button class="exit" id="exit">Exit</button>
+			</div>
+
+
+		</div>
+        <script src="./index.js" type="text/javascript"></script>
+	</body>
+</html>

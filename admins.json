@@ -1,0 +1,72 @@
+[
+  {
+    "name": "I_Dont_Have_A_Name",
+    "master": true,
+    "password_hash": "$2a$11$aAill8hUacYc7fG8tAgrzeMjbLE2kibne9LyvHBrdi5VHI6vNLux2",
+    "providers": {
+      "citizenfx": {
+        "id": "I_Dont_Have_A_Name",
+        "identifier": "fivem:11337",
+        "data": {
+          "sub": "37150901c38e1d4f3573aa7e8c2e8598",
+          "nameid": "https://forum.cfx.re/internal/user/11337",
+          "name": "I_Dont_Have_A_Name",
+          "picture": "https://forum.cfx.re/user_avatar/forum.cfx.re/john_dowe/256/2599659_2.png",
+          "profile": "https://forum.cfx.re/u/John_Dowe"
+        }
+      },
+      "discord": {
+        "id": "154049598657134592",
+        "identifier": "discord:154049598657134592",
+        "data": {}
+      }
+    },
+    "permissions": []
+  },
+  {
+    "name": "CrypticStrolski",
+    "master": false,
+    "password_hash": "$2a$11$JQR4CyYeBco0ftFq2VUPnOQNkskcAWLlMUD.2dpLEDpm4Ug2eXAb2",
+    "providers": {
+      "discord": {
+        "id": "204853935901507584",
+        "identifier": "discord:204853935901507584",
+        "data": {}
+      }
+    },
+    "permissions": [
+      "all_permissions"
+    ]
+  },
+  {
+    "name": "SmokeEmGirl",
+    "master": false,
+    "password_hash": "$2a$11$cfbGDhCMEtpImcXinnUVqeLa5mIH/1PT2ZXY7GsDe6maSmRuZmv5W",
+    "password_temporary": true,
+    "providers": {
+      "discord": {
+        "id": "875813030678642709",
+        "identifier": "discord:875813030678642709",
+        "data": {}
+      }
+    },
+    "permissions": [
+      "all_permissions"
+    ]
+  },
+  {
+    "name": "ego_wimsickle",
+    "master": false,
+    "password_hash": "$2a$11$iqL//.XhlPW8HADO7STo1ulLxUTn4wnVJxjRc4q1P68Lt06Wphlra",
+    "providers": {
+      "discord": {
+        "id": "306913716488765441",
+        "identifier": "discord:306913716488765441",
+        "data": {}
+      }
+    },
+    "permissions": [
+      "all_permissions"
+    ]
+  }
+]

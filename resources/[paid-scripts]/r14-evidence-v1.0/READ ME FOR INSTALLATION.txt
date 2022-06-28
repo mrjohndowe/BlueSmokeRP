@@ -1,0 +1,242 @@
+This script is NOT drag and drop. If you do not have an understanding of lua scripting, please consult
+a dev before installing. You will need to make some edits to key resources to take full advantage of
+this script, it is EXTREMELY IMPORTANT that you make a backup of ALL FILES that you are making edits to
+so that you can revert to a working build if necessary. This guide will attempt to layout how to make
+these edits as simply as possible. 
+
+
+1) Drag and drop the r14-evidence resource into your resources, either add it to an ensured resource
+directory or add ensure r14-evidence to your server.cfg file found in your base folder or txadmin. 
+
+2) Navigate to your qb-inventory or lj-inventory, here you will access the html folder, and then the js folder, 
+at which point you will open html/js/app.js and replace the following code below with the updated descriptions 
+for the evidence bags. This will allow tracking ID, date, and other information to be displayed correctly in
+the inventory. While you are here, please add the images to your inventory/html/images folder.
+
+------------- code to be replaced at or near line 516-570 in lj-inventory ---------------
+------------- code to be replaced at or near line 485-539 in qb-inventory  --------------
+
+        } else if (itemData.name == "filled_evidence_bag") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            if (itemData.info.type == "casing") {
+                $(".item-info-description").html(
+                    "<p><strong>Evidence material: </strong><span>" +
+                    itemData.info.label +
+                    "</span></p><p><strong>Type number: </strong><span>" +
+                    itemData.info.ammotype +
+                    "</span></p><p><strong>Caliber: </strong><span>" +
+                    itemData.info.ammolabel +
+                    "</span></p><p><strong>Serial: </strong><span>" +
+                    itemData.info.serie +
+                    "</span></p><p><strong>Crime scene: </strong><span>" +
+                    itemData.info.street +
+                    "</span></p><br /><p>" +
+                    itemData.description +
+                    "</p>"
+                );
+            } else if (itemData.info.type == "blood") {
+                $(".item-info-description").html(
+                    "<p><strong>Evidence material: </strong><span>" +
+                    itemData.info.label +
+                    "</span></p><p><strong>Blood type: </strong><span>" +
+                    itemData.info.bloodtype +
+                    "</span></p><p><strong>DNA Code: </strong><span>" +
+                    itemData.info.dnalabel +
+                    "</span></p><p><strong>Crime scene: </strong><span>" +
+                    itemData.info.street +
+                    "</span></p><br /><p>" +
+                    itemData.description +
+                    "</p>"
+                );
+            } else if (itemData.info.type == "fingerprint") {
+                $(".item-info-description").html(
+                    "<p><strong>Evidence material: </strong><span>" +
+                    itemData.info.label +
+                    "</span></p><p><strong>Fingerprint: </strong><span>" +
+                    itemData.info.fingerprint +
+                    "</span></p><p><strong>Crime Scene: </strong><span>" +
+                    itemData.info.street +
+                    "</span></p><br /><p>" +
+                    itemData.description +
+                    "</p>"
+                );
+            } else if (itemData.info.type == "dna") {
+                $(".item-info-description").html(
+                    "<p><strong>Evidence material: </strong><span>" +
+                    itemData.info.label +
+                    "</span></p><p><strong>DNA Code: </strong><span>" +
+                    itemData.info.dnalabel +
+                    "</span></p><br /><p>" +
+                    itemData.description +
+                    "</p>"
+                );
+            }
+
+
+------------ code to be added at or near line 516 or line 485 ---------------
+
+        } else if (itemData.name == "filled_evidence_bag") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            if (itemData.info.type == "casing") {
+                $(".item-info-description").html(
+                    "<p><strong>Evidence material: </strong><span>" +
+                    itemData.info.label +  
+                    "<p><strong>Tracking ID: </strong><span>" +
+                    itemData.info.tracking +
+                    "<p><strong>Collected: </strong><span>" +
+                    itemData.info.date +
+                    "</span></p><p><strong>Caliber: </strong><span>" +
+                    itemData.info.ammolabel +
+                    "</span></p><p><strong>Serial Number: </strong><span>" +
+                    itemData.info.serie +
+                    "</span></p><p><strong>Crime scene: </strong><span>" +
+                    itemData.info.street +
+                    "</span></p><br /><p>" +
+                    itemData.description +
+                    "</p>"
+                );
+            } else if (itemData.info.type == "blood") {
+                $(".item-info-description").html(
+                    "<p><strong>Evidence material: </strong><span>" +
+                    itemData.info.label +
+                    "<p><strong>Tracking ID: </strong><span>" +
+                    itemData.info.tracking +
+                    "<p><strong>Collected: </strong><span>" +
+                    itemData.info.date +
+                    "</span></p><p><strong>Blood type: </strong><span>" +
+                    itemData.info.bloodtype +
+                    "</span></p><p><strong>DNA Code: </strong><span>" +
+                    itemData.info.dnalabel +
+                    "</span></p><p><strong>Crime scene: </strong><span>" +
+                    itemData.info.street +
+                    "</span></p><br /><p>" +
+                    itemData.description +
+                    "</p>"
+                );
+            } else if (itemData.info.type == "fingerprint") {
+                $(".item-info-description").html(
+                    "<p><strong>Evidence material: </strong><span>" +
+                    itemData.info.label +
+                    "<p><strong>Tracking ID: </strong><span>" +
+                    itemData.info.tracking +
+                    "<p><strong>Collected: </strong><span>" +
+                    itemData.info.date +
+                    "</span></p><p><strong>Fingerprint: </strong><span>" +
+                    itemData.info.fingerprint +
+                    "</span></p><p><strong>Crime Scene: </strong><span>" +
+                    itemData.info.street +
+                    "</span></p><br /><p>" +
+                    itemData.description +
+                    "</p>"
+                );
+            } else if (itemData.info.type == "gsr") {
+                $(".item-info-description").html(
+                    "<p><strong>Evidence material: </strong><span>" +
+                    itemData.info.label +
+                    "<p><strong>Collected: </strong><span>" +
+                    itemData.info.date +
+                    "</span></p><p><strong>Conducted: </strong><span>" +
+                    itemData.info.street +
+                    "</span></p><br /><p>" +
+                    itemData.description +
+                    "</p>"
+                );
+            } else if (itemData.info.type == "dna") {
+                $(".item-info-description").html(
+                    "<p><strong>Evidence material: </strong><span>" +
+                    itemData.info.label +
+                    "</span></p><p><strong>DNA Code: </strong><span>" +
+                    itemData.info.dnalabel +
+                    "</span></p><br /><p>" +
+                    itemData.description +
+                    "</p>"
+                );
+            }
+
+-------------- end of code to be added to qb/aj-inventory/html/app.js ------------------------------------------------------------------------------------------------------------------------
+
+3) Navigate to your qb-core resource folder, you will need to make several edits to this resource. You will 
+need add a caliber to the guns in your QBShared.Weapons. This allows the evidence resource to access the type
+of cartridge fired by the weapons in your server. This is not difficult but time consuming, and a syntax error
+will prevent your server from being played on until it is fixed. You can add any caliber you like here, but common
+ones are 7.62x51 NATO, 9x19mm Parabellum, 7x29mm Soviet. I also recommend adding 'Taser AFID' to the stungun, as
+these Anti-Felon Identification Disks are disperssed by tasers in the real world so police can track their usage.
+
+If you have an old version of qb-core, it will likely look like this:
+
+------------ example of old QBShared.Weapons weapon entry with ['caliber'] = '', added --------------------------
+
+	[`weapon_pistol`] 				 = {['name'] = 'weapon_pistol', 			 	['label'] = 'H&L Classic Pistol', 		['weight'] = 1000, 		['caliber'] = '.45 ACP',			['type'] = 'weapon', 	['ammotype'] = 'AMMO_PISTOL',			['image'] = 'weapon_pistol.png', 		['unique'] = true, 		['useable'] = false, 	['description'] = 'A small firearm designed to be held in one hand'},
+
+If you have a new version of qb-core, it should look like this:
+
+------------ example of a new QBShared.Weapons weapon entry with ['caliber'] = '', added ------------------------
+
+	[`weapon_pistol`] 				 = {['name'] = 'weapon_pistol', 		['label'] = 'Walther P99',			['caliber'] = '.45 ACP',		['ammotype'] = 'AMMO_PISTOL',	['damagereason'] = 'Pistoled / Blasted / Plugged / Bust a cap in'},
+
+----------------------- end of QBShared.Weapons weapon entry ------------------------------
+
+4) You will need to add the camera item to your QBShared.Items, find a location in your shared items lua and
+insert the following line. Either edit the item to be useable, or replace the 
+
+------ item to be added QBShared.Items -------------
+
+	['nikon'] 			 	 	     = {['name'] = 'nikon', 					    ['label'] = 'Nikoff G900', 				['weight'] = 1000, 		['type'] = 'item', 		['image'] = 'nikon.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,    ['combinable'] = nil,   ['description'] = 'Caught in 4K'},
+	["gsrtestkit"] 					 = {["name"] = "gsrtestkit", 			  		["label"] = "GSR Field Test Kit", 		["weight"] = 200, 		["type"] = "item", 		["image"] = "gsrtestkit.png", 			["unique"] = false,		["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = 'A field GSR test kit containing several test strips'},
+	["dnatestkit"] 					 = {["name"] = "dnatestkit", 			  		["label"] = "DNA Field Swab Kit", 		["weight"] = 200, 		["type"] = "item", 		["image"] = "dnatestkit.png", 			["unique"] = false,		["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = 'A field DNA swab kit containing several vials and swabs'},
+	["breathalyzer"] 				 = {["name"] = "breathalyzer", 			  		["label"] = "Breathalyzer", 			["weight"] = 200, 		["type"] = "item", 		["image"] = "breathalyzer.png", 		["unique"] = false,		["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = 'A vintage 2000\'s WiWang breathalyzer engraved Property of LSPD'},
+
+------------------ edit ['useable'] to equal TRUE or replace -----------------------------
+
+	['filled_evidence_bag'] 		 = {['name'] = 'filled_evidence_bag', 			['label'] = 'Evidence Bag', 			['weight'] = 200, 		['type'] = 'item', 		['image'] = 'evidence.png', 			['unique'] = true, 		['useable'] = true, 	['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'A filled evidence bag to see who committed the crime >:('},
+
+------ end of items to be added to QBShared.items ------------------------------------------------------------------------------------------------------------------------------------------------
+
+5) Navigate to your qb-policejob resource, you will need to delete the qb-policejob/client/evidence.lua
+and remove several events from your qb-policejob/server/main.lua. This is necessary to prevent the old
+server events from creating evidence in the r14-evidence script, reducing the need to edit existing events
+within your server files to create evidence.
+
+----------- list of resource files to be removed from qb-policejob -----------------
+
+'evidence.lua' -- MAKE SURE TO REMOVE THIS, YOU DO NOT NEED IT ANYMORE
+
+----------- list of events to be removed from your qb-policejob/server/main.lua -------------------
+
+'evidence:server:UpdateStatus' 
+'evidence:server:CreateBloodDrop' 
+'evidence:server:CreateFingerDrop' 
+'evidence:server:ClearBlooddrops' 
+'evidence:server:AddBlooddropToInventory' 
+'evidence:server:AddFingerprintToInventory' 
+'evidence:server:CreateCasing' 
+'evidence:server:ClearCasings' 
+'evidence:server:AddCasingToInventory'
+'police:GetPlayerStatus' -- THIS IS A CALLBACK, IT WILL NOT FETCH CURRENT STATUSES IF NOT MOVED
+
+------------ list of commands to be removed from qb-policejob/server/main.lua ------------------
+
+QBCore.Commands.Add("clearblood"
+QBCore.Commands.Add("clearcasings"
+QBCore.Commands.Add("takedna"
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------d
+
+6) Navigate to your qb-smallresources/client/ folder, and drag and drop the carwash.lua file into this 
+folder. This will replace the old carwash, and add the ability to clean the interior of cars to remove
+evidence which accumulates in vehicles.
+
+7) Access your database and locate your player_vehicles table if using qb-garages, here you need to run
+the following SQL statement. Click your databse, and then run the statement. If you do not use garages,
+you can add this to whatever database you use to manage your vehicles, but must update the SQL in the
+server/main.lua
+
+------------- sql to run in database ---------------
+
+ALTER TABLE `player_vehicles`
+ADD `evidence` longtext;
+
+----------------------------------------------- end of sql statement -----------------------
+
+8) Use the installation checklist to ensure you have made all needed changes! Then enjoy!
+

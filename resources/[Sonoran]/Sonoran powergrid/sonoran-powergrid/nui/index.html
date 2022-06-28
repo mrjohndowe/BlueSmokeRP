@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+			integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+			crossorigin="anonymous"
+		/>
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js"></script>
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<script src="app.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="style.css" />
+		<title>Sonoran Numpad Game</title>
+	</head>
+	<body>
+		<div
+			class="min-h-screen flex items-center justify-center"
+			style="display: none"
+			id="numpad-background"
+		>
+			<div
+				style="background-color: #121833"
+				class="grid grid-cols-3 rounded p-2 gap-2 text-center shadow"
+			>
+				<img class="col-span-3 w-20" style="display: block; margin: auto;" src="sonoran.png">
+				<div
+					style="background-color: #c1d3d9"
+					class="col-span-3 rounded text-black align-middle mb-1 w-full h-12 text-center py-2 text-xl"
+					id="numpad"
+				>
+					Enter code
+				</div>
+				<button
+					style="background-color: #1c3463; color: #cad3e2"
+					class="font-bold rounded w-10 h-10 p-2 hover:bg-gray-300 transition-all ease-in-out"
+					onclick="typeNum('1')"
+				>
+					1
+				</button>
+				<button
+					style="background-color: #1c3463; color: #cad3e2"
+					class="font-bold rounded w-10 h-10 p-2 hover:bg-gray-300 transition-all ease-in-out"
+					onclick="typeNum('2')"
+				>
+					2
+				</button>
+				<button
+					style="background-color: #1c3463; color: #cad3e2"
+					class="font-bold rounded w-10 h-10 p-2 hover:bg-gray-300 transition-all ease-in-out"
+					onclick="typeNum('3')"
+				>
+					3
+				</button>
+				<button
+					style="background-color: #1c3463; color: #cad3e2"
+					class="font-bold rounded w-10 h-10 p-2 hover:bg-gray-300 transition-all ease-in-out"
+					onclick="typeNum('4')"
+				>
+					4
+				</button>
+				<button
+					style="background-color: #1c3463; color: #cad3e2"
+					class="font-bold rounded w-10 h-10 p-2 hover:bg-gray-300 transition-all ease-in-out"
+					onclick="typeNum('5')"
+				>
+					5
+				</button>
+				<button
+					style="background-color: #1c3463; color: #cad3e2"
+					class="font-bold rounded w-10 h-10 p-2 hover:bg-gray-300 transition-all ease-in-out"
+					onclick="typeNum('6')"
+				>
+					6
+				</button>
+				<button
+					style="background-color: #1c3463; color: #cad3e2"
+					class="font-bold rounded w-10 h-10 p-2 hover:bg-gray-300 transition-all ease-in-out"
+					onclick="typeNum('7')"
+				>
+					7
+				</button>
+				<button
+					style="background-color: #1c3463; color: #cad3e2"
+					class="font-bold rounded w-10 h-10 p-2 hover:bg-gray-300 transition-all ease-in-out"
+					onclick="typeNum('8')"
+				>
+					8
+				</button>
+				<button
+					style="background-color: #1c3463; color: #cad3e2"
+					class="font-bold rounded w-10 h-10 p-2 hover:bg-gray-300 transition-all ease-in-out"
+					onclick="typeNum('9')"
+				>
+					9
+				</button>
+				<button
+					class="bg-green-800 rounded w-10 h-10 p-2 text-white hover:bg-green-300 transition-all ease-in-out"
+					id="submit"
+				>
+					<i class="fas fa-check-circle"></i>
+				</button>
+				<button
+					style="background-color: #1c3463; color: #cad3e2"
+					class="font-bold rounded w-10 h-10 p-2 hover:bg-gray-300 transition-all ease-in-out"
+					onclick="typeNum('0')"
+				>
+					0
+				</button>
+				<button
+					class="bg-red-800 rounded w-10 h-10 p-2 text-white hover:bg-red-300 transition-all ease-in-out"
+					id="clear"
+				>
+					<i class="fas fa-times-circle"></i>
+				</button>
+			</img>
+		</div>
+	</body>
+</html>

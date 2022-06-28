@@ -1,0 +1,154 @@
+#   ____  ____   _____               
+#  / __ \|  _ \ / ____|              
+# | |  | | |_) | |     ___  _ __ ___ 
+# | |  | |  _ <| |    / _ \| '__/ _ \
+# | |__| | |_) | |___| (_) | | |  __/
+#  \___\_\____/ \_____\___/|_|  \___|
+
+## You CAN edit the following:
+endpoint_add_tcp "0.0.0.0:30120"
+endpoint_add_udp "0.0.0.0:30120"
+sv_maxclients 48
+set steam_webApiKey "none"
+sets tags "default, deployer, qbcore, qb-core"
+sets banner_detail "https://cdn.discordapp.com/attachments/896900470260523048/899039211032829962/slide3-bg.jpg"
+sets banner_connecting "https://cdn.discordapp.com/attachments/896900470260523048/899039211032829962/slide3-bg.jpg"
+
+sets MicRequired " YES "
+sets Roleplay "Hardcore/Serious RP"
+
+
+## You MAY edit the following:
+sv_licenseKey "cfxk_19LGXvZY6HMZFJFSIzeaW_10J1jb"
+sv_hostname "^0[^6Closed DEV^0] ^6BlueSmoke ^0RP | ^6 | DEV testing Stage ^0| ^6Serious ^0Roleplay | ^6| ^6Discord: ^0https://discord.gg/HtmEjHnDQt"
+sets sv_projectName "^5[^9Closed^6-^9DEV^5] BlueSmoke RP"
+sets sv_projectDesc "IT JUST WORKS! | Closed Development, Custom Framework, Custom Clothes & Vehicles, Discord: discord.gg/HtmEjHnDQt"
+sets locale "en-US" 
+load_server_icon myLogo.png
+set sv_enforceGameBuild 2372
+set mysql_connection_string "mysql://mrjohndowe:53nrw695@localhost/fivem_bluesmokerp?charset=utf8mb4"
+sets discord "https://discord.gg/HtmEjHnDQt"
+sets Twitch.tv "https://twitch.tv/crypticstrolski"
+sets Twitch.tv "https://twitch.tv/mrjohndoweii"
+
+# Voice config
+setr voice_useNativeAudio true
+setr voice_useSendingRangeOnly true
+setr voice_defaultCycle "GRAVE"
+setr voice_defaultVolume 0.3
+setr voice_enableRadioAnim 1
+setr voice_syncData 1
+
+# QBCore locale config
+setr qb_locale "en"
+
+# QBCore UseTarget
+setr UseTarget true
+
+
+# These resources will start by default.
+ensure mapmanager
+ensure chat
+ensure spawnmanager
+ensure sessionmanager
+#ensure basic-gamemode
+ensure hardcap
+ensure baseevents
+
+
+# QBCore & Extra stuff
+ensure qb-core
+ensure [qb]
+ensure prison_canteen
+stop qb-garages
+stop qb-inventory
+#stop qb-menu
+stop qb-ambulancejob
+ensure [standalone]
+ensure [voice]
+#ensure [defaultmaps]
+
+#EUP Management
+start NativeUI
+start eup-stream
+start eup-ui
+
+ensure [map]
+ensure [vehicles]
+ensure [outjobs]
+ensure [lvc]
+
+
+#SonoranCAD
+ensure pNotify
+ensure wk_wars2x
+ensure sonorancad
+ensure tablet
+ensure sonoran_idcard
+ensure smartsigns_sonoran
+ensure sonoran-trafficcam
+ensure speed_warning
+ensure sonoran-shotspotter 
+
+
+#Custom Scripts
+start hair-pack
+start shoes-pack
+ensure [free-scripts]
+ensure [fire_scripts]
+#ensure [paid-scripts]
+ensure core_skills
+ensure core_crafting
+ensure core_drugs
+ensure core_vehicle
+ensure qb_stores
+ensure core_stores
+ensure [Special_Vehicles]
+#ensure [bb_garages]
+#ensure MojiaGarages
+ensure average_speed_cameras
+ensure [smart_scripts]
+ensure BikeHire
+#ensure SmartDrone
+restart backitems
+
+
+
+stop watermark
+## Permissions ##
+add_ace group.admin command allow # allow all commands
+#add_principal identifier.{{principalMasterIdentifier}} qbcore.god <- doesn't exist yet, change the generated one below to qbcore.god
+add_principal identifier.fivem:11337 group.admin #John_Dowe
+add_principal identifier.fivem:3300406 group.admin #Wimsickle
+add_principal identifier.fivem:6629863 group.admin #Smoke
+add_principal identifier.fivem:580110 group.admin #Cryptic
+add_principal identifier.fivem:7345533 group.admin #Jordy
+
+add_principal identifier.license:a53499880a6729011be9f8247fe18d92500db836 group.admin # Add player to the group
+
+# Resources
+add_ace resource.qb-core command allow # Allow qb-core to execute commands
+add_ace group.admin vehicles_keys allow # Add permission to group
+add_ace resource.vehicles_keys command allow
+
+# permissions for auto-updater (REQUIRED)
+#add_ace resource.sonoranradio command allow
+#add_ace resource.sonoranradio_updatehelper command allow
+add_ace resource.sonoran-shotspotter command allow
+add_ace resource.sonoran-shotspotter_helper command allow
+# permissions for sonrad tower commands
+#add_principal group.admin sonoranradio.towers
+#add_ace sonoranradio.towers command.spawntower allow
+#add_ace sonoranradio.towers command.savetowers allow
+# permissions for auto-updater (REQUIRED)
+add_ace resource.sonorancad command allow
+add_ace resource.sonoran_updatehelper command allow
+setr sonorantablet_cadUrl "https://app.sonorancad.com/#/?comid=BSRCAD"
+
+# Gods
+add_ace qbcore.god command allow # Allow all commands
+
+# Inheritance
+add_principal qbcore.god group.admin # Allow gods access to the main admin group used to get all default permissions
+add_principal qbcore.god qbcore.admin # Allow gods access to admin commands
+add_principal qbcore.admin qbcore.mod # Allow admins access to mod commands

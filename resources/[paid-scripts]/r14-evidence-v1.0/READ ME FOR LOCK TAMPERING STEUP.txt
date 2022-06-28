@@ -1,0 +1,20 @@
+Out of the box, qb-core does not have an functions that allow automatic generation of 
+lock tampering evidence based on the vehicle. If you wish to modify your vehicle keys/theft
+resource to work with r14-evidence, please do so at your own risk! BACKUP EVERYTHING you 
+intend to change so that you can revert to a working copy. Do not make changes to your 
+resources if you do are not familiar with lua or scripting languages, I will not offer free
+support to fix resources broken attempting to modify them.
+
+If you choose to proceed, you can generate vehicle fingerprints by using the following events:
+
+-------------------------------------------------------------------
+
+To create a lock tampering, you must simply trigger this server event with the coords of the tampering.
+
+TriggerServerEvent("evidence:server:CreateLockTampering", coords)
+
+------------------------- example code ------------------------
+
+local pos = GetEntityCoords(PlayerPedId())
+
+TriggerServerEvent("evidence:server:CreateLockTampering", pos)

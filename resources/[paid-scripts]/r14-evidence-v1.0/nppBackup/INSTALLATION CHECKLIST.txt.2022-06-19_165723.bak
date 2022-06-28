@@ -1,0 +1,24 @@
+CHECKLIST FOR R14-EVIDENCE SCRIPT SETUP
+
+    [ ] - Updated inventory to display item.info.tracking and item.info.date (Step 3)
+
+    [ ] - Updated inventory images with new item images
+
+    [ ] - Updated qb-core/shared/weapons.lua to add ['caliber'] = 'EXAMPLE CALIBER', to all weapons
+
+    [ ] - Updated qb-core/shared/items.lua to add nikon, gsrtestkit, dnatestkit, and OPTIONAL breathalyzer items
+
+    [ ] - Update your filled_evidence_bag item to be ['usable'] = true
+
+    [ ] - Removed evidence.lua from qb-policejob
+
+    [ ] - Removed server events from qb-policejob/server/main.lua specified in install (Step 6)
+
+    [ ] - Removed clearblood, clearcasings, and takedna commands from qb-policejob/server/main.lua (Step 6)
+
+    [ ] - Replaced qb-smallresources/client/carwash.lua
+
+    [ ] - Ran SQL statement to add evidence column to your player vehicle table
+
+    [ ] - Updated config to use correct player vehicle table from database if not using qb-garages
+

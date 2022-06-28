@@ -1,0 +1,41 @@
+If you use qb-smallresources, and have not made changes to it, you should be able
+to use the breathalyzer events in this script without issue. If you have a different
+resource that manages alcohol and consumables, you should set the config variable to
+false for this part of the resource. 
+
+If you wish to modify your resource to work with r14-evidence, please do so at your own
+risk. BACKUP EVERYTHING you change so that you can revert to a working resource if 
+needed. Do not make changes to your resources if you do are not familiar with lua or
+scripting language, I will not offer free support to fix resources broken attempting
+to modify them.
+
+If you choose to proceed, you have several options to enable the breathalyzer and BAC
+functionality:
+
+----------- setting BAC via client event --------------
+
+You can increase a players BAC by triggering the following event, either from the
+client side or the server side. You will need to add one of the following event triggers
+to your code where the resource successfully determines you drank the alcohol. Look for
+events that restore thirst, apply status effects, or increase the amount the person has 
+drank. 
+
+TriggerEvent('evidence:client:SetStatus', "alcohol", time, abv) [ FROM CLIENT SCRIPT ]
+
+or 
+
+TriggerClientEvent('evidence:client:SetStatus', source, "alcohol", time, abv) [ FROM SERVER SCRIPT ]
+
+******* the abv variable is OPTIONAL, and by default will be set to 15 or 0.015 BAC. ********
+
+--------- setting BAC via server event (RECOMMENDED) ------------------
+
+You can increase and decrease a players BAC by triggering the server side events from
+the client side. These events WILL NOT work if triggered from the server, as they will
+not be able to find the player's source. By default, an alochol item use triggered by this
+event will increase a players BAC by 15 or 0.015 BAC per drink, you can set a value 
+anywhere between 1 and 1000. 
+
+TriggerServerEvent('evidence:server:IncreaseBAC', abv, target)
+
+TriggerServerEvent('evidence:server:DecreaseBAC', abv, target)

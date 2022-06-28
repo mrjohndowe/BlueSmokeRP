@@ -1,0 +1,21 @@
+Known Bugs:
+
+- player vs player bullet impacts are extremely finicky, they will not always attach 
+correctly, likely do to how onesync handles damage events between players, as I learn 
+more about how damage occurs across netsync this will be refined as much as possible
+
+- bullet impacts will often not generate when shooting from first person in a vehicle
+due to natives used to calculate bullet impact returning the location the bullet passes
+through the windshield
+
+- bullet impacts will not attach to blown up vehicles or dead peds, this is because all
+natives that can be used to return damage done to these entities do not work if the ped
+is destroyed (and therefore not taking damage)
+
+[ NOT OBSERVED SINCE FIX IMPLEMENTED ] - bullet wounds will occasionally appear on vehicles for some reason, I believe I have
+implemented the fix for this, and have not seen it since, but if it occurs please report
+it 
+
+- bullet impacts will occasionally draw at vector3(0.0, 0.0, 0.0) while being accurately
+distance checked, I do not know why, and will implement a fix when I find out why this is 
+occuring
