@@ -598,6 +598,82 @@ function FormatItemInfo(itemData, dom) {
                     itemData.description +
                     "</p>"
                 );
+            }} else if (itemData.name == "filled_evidence_bag") {
+            $(".item-info-title").html("<p>" + itemData.label + "</p>");
+            if (itemData.info.type == "casing") {
+                $(".item-info-description").html(
+                    "<p><strong>Evidence material: </strong><span>" +
+                    itemData.info.label +  
+                    "<p><strong>Tracking ID: </strong><span>" +
+                    itemData.info.tracking +
+                    "<p><strong>Collected: </strong><span>" +
+                    itemData.info.date +
+                    "</span></p><p><strong>Caliber: </strong><span>" +
+                    itemData.info.ammolabel +
+                    "</span></p><p><strong>Serial Number: </strong><span>" +
+                    itemData.info.serie +
+                    "</span></p><p><strong>Crime scene: </strong><span>" +
+                    itemData.info.street +
+                    "</span></p><br /><p>" +
+                    itemData.description +
+                    "</p>"
+                );
+            } else if (itemData.info.type == "blood") {
+                $(".item-info-description").html(
+                    "<p><strong>Evidence material: </strong><span>" +
+                    itemData.info.label +
+                    "<p><strong>Tracking ID: </strong><span>" +
+                    itemData.info.tracking +
+                    "<p><strong>Collected: </strong><span>" +
+                    itemData.info.date +
+                    "</span></p><p><strong>Blood type: </strong><span>" +
+                    itemData.info.bloodtype +
+                    "</span></p><p><strong>DNA Code: </strong><span>" +
+                    itemData.info.dnalabel +
+                    "</span></p><p><strong>Crime scene: </strong><span>" +
+                    itemData.info.street +
+                    "</span></p><br /><p>" +
+                    itemData.description +
+                    "</p>"
+                );
+            } else if (itemData.info.type == "fingerprint") {
+                $(".item-info-description").html(
+                    "<p><strong>Evidence material: </strong><span>" +
+                    itemData.info.label +
+                    "<p><strong>Tracking ID: </strong><span>" +
+                    itemData.info.tracking +
+                    "<p><strong>Collected: </strong><span>" +
+                    itemData.info.date +
+                    "</span></p><p><strong>Fingerprint: </strong><span>" +
+                    itemData.info.fingerprint +
+                    "</span></p><p><strong>Crime Scene: </strong><span>" +
+                    itemData.info.street +
+                    "</span></p><br /><p>" +
+                    itemData.description +
+                    "</p>"
+                );
+            } else if (itemData.info.type == "gsr") {
+                $(".item-info-description").html(
+                    "<p><strong>Evidence material: </strong><span>" +
+                    itemData.info.label +
+                    "<p><strong>Collected: </strong><span>" +
+                    itemData.info.date +
+                    "</span></p><p><strong>Conducted: </strong><span>" +
+                    itemData.info.street +
+                    "</span></p><br /><p>" +
+                    itemData.description +
+                    "</p>"
+                );
+            } else if (itemData.info.type == "dna") {
+                $(".item-info-description").html(
+                    "<p><strong>Evidence material: </strong><span>" +
+                    itemData.info.label +
+                    "</span></p><p><strong>DNA Code: </strong><span>" +
+                    itemData.info.dnalabel +
+                    "</span></p><br /><p>" +
+                    itemData.description +
+                    "</p>"
+                );
             }
         } else if (
             itemData.info.costs != undefined &&
