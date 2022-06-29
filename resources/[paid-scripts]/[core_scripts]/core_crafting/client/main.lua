@@ -131,7 +131,7 @@ Citizen.CreateThread(function()
             for _, v in ipairs(Config.Workbenches) do
                 local dst = #(coords - v.coords)
                 if dst < 20 then
-                    DrawText3D(v.coords[1], v.coords[2], v.coords[3], '~o~Workbench~w~')
+                    DrawText3D(v.coords[1], v.coords[2], v.coords[3], '~o~Press E to open the Workbench~w~')
                 end
                 if dst < 2 then
                     if IsControlJustReleased(0, 38) then
