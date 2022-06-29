@@ -13,22 +13,73 @@ ExperiancePerCraft = 5, -- The amount of experiance added per craft (100 Experia
 HideWhenCantCraft = false, -- Instead of lowering the opacity it hides the item that is not craftable due to low level or wrong job
 
 Categories = {
+	['legal_weapons'] = {
+		Label = 'Legal Weapons',
+		Image = 'legal_weapons',
+		Jobs = {}
+	},
+	['illegal_weapons'] = {
+		Label = 'Illegal Weapons',
+		Image = 'illegal_weapons',
+		Jobs = {}
+	},
+	['wood_work'] = {
+		Label = 'Wood Working',
+		Image = 'wood_work',
+		Jobs = {}
+	},
+	['electronics'] = {
+		Label = 'Electronics',
+		Image = 'electronicskit',
+		Jobs = {}
+	},
+	['tools'] = {
+		Label = 'Tools',
+		Image = 'hammer',
+		Jobs = {}
+	},
+	['car_parts'] = {
+		Label = 'Car Parts',
+		Image = 'car_parts',
+		Jobs = {'mechanic'}
+	},
+	['alcohol'] = {
+		Label = 'Alcohol & Wine',
+		Image = 'beer',
+		Jobs = {}
+	},
+	['plastics'] = {
+		Label = 'Plastics',
+		Image = 'plastic',
+		Jobs = {}
+	},
+	['police_equipment'] = {
+		Label = 'Police Equipment',
+		Image = 'police_equipment',
+		Jobs = {'police'}
+	},
+	['fire_ems_equipment'] = {
+		Label = 'Fire & EMS Equipment',
+		Image = 'fire_ems_equipment',
+		Jobs = {'ambulance','fire'}
+	},
+	
 
-	['misc'] = {
-		Label = 'MISC',
-		Image = 'fishingrod',
-		Jobs = {}
-	},
-	['weapons'] = {
-		Label = 'WEAPONS',
-		Image = 'WEAPON_APPISTOL',
-		Jobs = {}
-	},
-	['medical'] = {
-		Label = 'MEDICAL',
-		Image = 'bandage',
-		Jobs = {}
-	}
+	-- ['misc'] = {
+		-- Label = 'MISC',
+		-- Image = 'fishingrod',
+		-- Jobs = {}
+	-- },
+	-- ['weapons'] = {
+		-- Label = 'WEAPONS',
+		-- Image = 'WEAPON_APPISTOL',
+		-- Jobs = {}
+	-- },
+	-- ['medical'] = {
+		-- Label = 'MEDICAL',
+		-- Image = 'bandage',
+		-- Jobs = {}
+	-- }
 
 
 },
